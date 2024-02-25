@@ -35,7 +35,7 @@ export default function Home() {
   useEffect(() => {
     getGeneratedVoices();
     console.log(arrayOfVoices);
-  }, []);
+  }, );
 
   useEffect(() => {
     console.log(theVoiceId);
@@ -77,7 +77,7 @@ export default function Home() {
   a speech dictated by a fake, AI-generated voice that I had trained.
   <br />
   <br />
-  It's <span className="animate-color-change">fun</span>. It's <span className="animate-color-change">free</span>. It's <span className="animate-color-change">cool</span>. It's Voicify.
+  It&apos;s <span className="animate-color-change">fun</span>. It&apos;s <span className="animate-color-change">free</span>. It&apos;s <span className="animate-color-change">cool</span>. It&apos;s Voicify.
 </div>
 <div className="w-full items-center flex flex-col gap-2 mt-2">
   <div className="w-full">
