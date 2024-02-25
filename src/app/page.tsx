@@ -70,20 +70,23 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen bg-gray-900 flex-col items-center justify-between px-24 py-12">
-      <h1 className=" text-5xl mb-4">FakeVoice</h1>
-      <div className="mb-4">
-        This is a project that uses the ElevenLabs API to convert your text into
-        a speech dictated by a fake, AI-generated voice
-      </div>
-      <div className="w-full items-center flex flex-col gap-2 mt-2">
-        <div className="w-full">
-          <div className="text-center">Choose a voice</div>
-          <div className="w-full  flex  justify-center">
-            {arrayOfVoices ? (
-              <div className="flex gap-4">
-                {arrayOfVoices.map((e: VoiceObject) => (
-                  <button
+    <main className="flex min-h-screen bg-pink-100 flex-col items-center justify-between px-24 py-12">
+<h1 className="text-5xl mb-4 text-center">Voicify</h1>
+<div className="mb-4 text-center">
+  This project uses the ElevenLabs API to convert inputted text into
+  a speech dictated by a fake, AI-generated voice that I had trained.
+  <br />
+  <br />
+  It's <span className="animate-color-change">fun</span>. It's <span className="animate-color-change">free</span>. It's <span className="animate-color-change">cool</span>. It's Voicify.
+</div>
+<div className="w-full items-center flex flex-col gap-2 mt-2">
+  <div className="w-full">
+    <div className="text-center">Choose a voice</div>
+    <div className="w-full flex justify-center">
+      {arrayOfVoices ? (
+        <div className="flex gap-4">
+          {arrayOfVoices.map((e: VoiceObject) => (
+            <button
                     className={`border ${
                       theVoiceId === e.voice_id ? "bg-green-700" : ""
                     }   px-2 my-2 rounded-sm  py-1`}
@@ -108,7 +111,7 @@ export default function Home() {
         />
 
         <button
-          className="bg-blue-600 px-5 mt-2 py-1 self-center h-max rounded-sm hover:bg-blue-900 disabled:cursor-not-allowed disabled:bg-blue-900 transition-colors"
+          className="bg-green-700 px-5 mt-2 py-1 self-center h-max rounded-sm hover:bg-green-700 disabled:cursor-not-allowed disabled:bg-green-700 transition-colors"
           onClick={generateSpeech}
           disabled={isLoading || !theText}
         >
@@ -122,6 +125,9 @@ export default function Home() {
           </audio>
         )}
       </div>
+      <footer className="bg-blue-900 text-white text-center py-4 w-full absolute bottom-0">
+    Navya @ 2024. All rights reserved.
+  </footer>
     </main>
   );
 }
